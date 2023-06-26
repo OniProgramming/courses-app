@@ -38,7 +38,7 @@
                     <hr/>
                     <br/>
                     <li class = "list-group-item">
-                        <script src="https://www.paypal.com/sdk/js?client-id=AbpbUuO_Wc_GvTX06ev9I7yeQqbZdSstJOYk5SApOLYn8r6eVF13PgEyQ0pkcvUglvCMyyPTe1YSLnwA&vault=true&intent=subscription"></script>
+                        <script src="https://www.paypal.com/sdk/js?client-id=CLIENT_ID&vault=true&intent=subscription"></script>
                         <center><div id="paypal-button-container"></div></center>
                         <script>
                             paypal.Buttons({
@@ -50,7 +50,7 @@
                                 },
                                 createSubscription: function(data, actions) {
                                 return actions.subscription.create({
-                                'plan_id': 'P-4L320504B9147704KMSGDRII' // Creates the subscription
+                                'plan_id': 'planID' // Creates the subscription
                                 });
                                 },
                                 onApprove: function(data, actions) {
