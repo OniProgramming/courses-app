@@ -1,0 +1,29 @@
+{% extends 'mysite/base.html' %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid" style="margin-bottom: 10%; margin-top:4%">
+    <div class="container">
+        <h3 class="display-8"> Login  </h3>
+        <p class="lead">Type your data and enter into your account</p>
+        <hr class = "my-4">
+
+        <form action="" method = "POST"> 
+            {% csrf_token %}
+           
+            <div class="mb-3" style="width: 300px">
+                <label for="exampleInputEmail1" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+                
+            </div>
+            <div class="mb-3" style="width: 300px">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+        
+            <input type = "submit" value = "Submit" class = "btn btn-secondary">
+        </form>
+    </div>
+</div>
+
+
+{% endblock  %}

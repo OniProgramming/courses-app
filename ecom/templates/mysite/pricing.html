@@ -1,0 +1,99 @@
+{% extends 'mysite/base.html' %}
+{% block title %}Pricing{% endblock %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid my-4 ">
+    <div class="container">
+        <h3 class="display-8"> Subscribe to become a pro member </h3>
+        <p class="lead">ENJOY PRO CONTENT AT AFFORDABLE PRICE</p>
+        <hr class = "my-4">
+        <div class="card d-flex justify-content-center" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class = "card-title text-center">Pro member - $300/month</h5>
+                <hr/>
+                <ul class = "text-center" style="list-style-type: none; margin-left:-20px">
+                    <li class = "list-group-item"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                        </svg>
+                        HD Video Quality 
+                    </li>
+                    <hr/>
+                    <li class = "list-group-item"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                        </svg>
+                        Access to all courses 
+                    </li>
+                    <hr/>
+                    <li class = "list-group-item"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                        </svg>
+                        Take notes and save as pdf 
+                    </li>
+                    <hr/>
+                    <br/>
+                    <li class = "list-group-item">
+                        <script src="https://www.paypal.com/sdk/js?client-id=AbpbUuO_Wc_GvTX06ev9I7yeQqbZdSstJOYk5SApOLYn8r6eVF13PgEyQ0pkcvUglvCMyyPTe1YSLnwA&vault=true&intent=subscription"></script>
+                        <center><div id="paypal-button-container"></div></center>
+                        <script>
+                            paypal.Buttons({
+                                style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'subscribe'
+                                },
+                                createSubscription: function(data, actions) {
+                                return actions.subscription.create({
+                                'plan_id': 'P-4L320504B9147704KMSGDRII' // Creates the subscription
+                                });
+                                },
+                                onApprove: function(data, actions) {
+                                    let current_url = '/activate/' + data.subscriptionID
+                                    window.open(current_url, '_self')
+                                    alert('You have successfully subscribed to ' + data.subscriptionID); // Optional message given to subscriber
+                                }
+                            }).render('#paypal-button-container'); // Renders the PayPal button
+                        </script>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+    {% comment %} Contact form  {% endcomment %}
+    <div class = "container my-4">
+        <div style="margin:80px">
+            <h3 class="display-8"> Contact us </h3>
+            <h4>Contact our team and get connected for any questions</h4>
+            <p>
+                Please write your name, email address and a message below if you have any questions.
+                One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
+            </p>
+            {% if message_sent %}
+                <p>Thank you for your message. We will contact you as soon as possible.</p>
+                <p>Check out our products and enjoy your career journey.</p>
+                <p>Also subscribe to our news letter and get notified when new contend is reeased.</p>
+                <a href="{% url 'courses'%}" class="btn btn-success" role="button">Check out</a>
+                <a href="{% url 'optin'%}" class="btn btn-warning" role="button">Subscribe now</a>
+            {% else %}
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock  %}
+

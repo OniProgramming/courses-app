@@ -1,0 +1,46 @@
+{% extends 'mysite/base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+  
+<div class="jumbotron jumbotron-fluid my-4">
+    <div class="container">
+        <div class = "row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                      Account
+                    </div>
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Username: {{user.username}}</li>
+                        <li class="list-group-item">Email: {{user.email}}</li>
+                        <li class="list-group-item">First Name: {{user.first_name}}</li>
+                        <li class="list-group-item">Last Name: {{user.last_name}} </li>
+                      </ul>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                      Membership
+                    </div>
+                    <div class="card-body">
+                      {% if user.student.subscribed %}
+                      <span class="badge bg-success">You are a pro member</span>
+                      {% else %}
+                        <a href = "{% url 'pricing'%}" class = "btn btn-danger"> Get pro membership </a>
+                      {% endif %}
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock  %}

@@ -1,0 +1,215 @@
+{% extends 'mysite/base.html' %}
+{% block title %}Newsletter{% endblock %}
+{% block content %}
+
+    <div class="jumbotron jumbotron-fluid my-4">
+        <div class="container">
+            <h3 class="display-8"> Email subscription  </h3>
+            <p class="lead">Stay updated to the new content</p>
+            <hr class = "my-4">
+            <!-- Creating a form for subscribing to the website -->
+            <!-- Now we need to verify the optedin variable which is in views.py. By default this 
+            variable is False; if it is false then we will display the form, if not then it means that 
+            the  user provided the informations, thus we will display a message-->
+            {% if optedin %}
+            <p>Thank you for your subscription. We will get you notified whenever a new conted is posted.</p>
+            <p>Check out our products and enjoy your career journey.</p>
+            <a href="{% url 'courses'%}" class="btn btn-success" role="button">Check out</a>
+            {% else %}
+            <form action = "{% url 'optin' %}" method = "POST">
+                {% csrf_token %}
+                <div class="form-row col-md-6">
+                    <div class="form-group ">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="fname" name="fname" placeholder="Your first name">
+                    </div>
+                </div>
+                <br/>
+                <div class="form-row col-md-6">
+                    <div class="form-group ">
+                        <label for="name">Country</label>
+                        <input type="text" class="form-control" id="country" name="country" placeholder="Country">
+                    </div>
+                </div>
+                <br/>
+                <div class="form-row col-md-6">
+                    <div class="form-group ">
+                        <label for="name">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your email">
+                        <small id="emailHelp" class="form-text text-muted">We will never share your email with anyone else</small>
+                    </div>
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+            {% endif %}
+            <hr class = "my-4">
+            
+            <section>
+                <div class="row d-flex justify-content-center">
+                  <div class="col-md-10 col-xl-8 text-center">
+                    <h3 class="mb-4">Testimonials</h3>
+                    <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                      Welcome to our testimonial! Here you will find heartfelt 
+                      accounts and experiences shared by our valued customers. 
+                      We believe that hearing from those who have already benefited 
+                      from our products/services is the best way to understand their 
+                      true value and the positive impact they can have on your life. 
+                      These testimonials reflect the genuine satisfaction and appreciation our 
+                      customers have for the quality, reliability, and effectiveness of what we offer.
+                    </p>
+                  </div>
+                </div>
+              
+                <div class="row text-center">
+                  <div class="col-md-4 mb-5 mb-md-0">
+                    <div class="d-flex justify-content-center mb-4">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                        class="rounded-circle shadow-1-strong" width="150" height="150" />
+                    </div>
+                    <h5 class="mb-3">Maria Samantha</h5>
+                    <h6 class="text-primary mb-3">Web Developer</h6>
+                    <p class="px-xl-3">
+                      <i class="fas fa-quote-left pe-2"></i>
+                      "I can't thank this web platform enough for the incredible 
+                      learning experience it has provided me. As a high school student 
+                      with a keen interest in coding, I struggled to find comprehensive resources 
+                      until I discovered this platform. The courses were not only well-structured but 
+                      also taught by industry experts who shared practical insights. The interactive 
+                      nature of the platform made learning fun and engaging. I gained the skills and 
+                      knowledge I needed to pursue my passion, and now I'm even considering a career 
+                      in software development. I highly recommend this platform to any aspiring learner."
+
+                    </p>
+                    <ul class="list-unstyled d-flex justify-content-center mb-0">
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4 mb-5 mb-md-0">
+                    <div class="d-flex justify-content-center mb-4">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+                        class="rounded-circle shadow-1-strong" width="150" height="150" />
+                    </div>
+                    <h5 class="mb-3">Lisa Cudrow</h5>
+                    <h6 class="text-primary mb-3">Graphic Designer</h6>
+                    <p class="px-xl-3">
+                      <i class="fas fa-quote-left pe-2"></i>
+                      "Being a busy professional, finding time for personal growth seemed 
+                      nearly impossible. However, this web platform revolutionized my learning journey. 
+                      I stumbled upon it while searching for self-improvement resources, and I'm so glad I did.
+                       The wide range of courses available allowed me to explore various subjects of interest, 
+                       from personal finance to public speaking. The flexibility of learning at my own 
+                       pace and accessing the courses from anywhere made it incredibly convenient. 
+                       The platform's user-friendly interface and high-quality video content made the
+                       learning experience seamless. Thanks to this platform, I have gained new skills, 
+                       expanded my knowledge, and boosted my confidence. It has been a game-changer for me!"
+                    </p>
+                    <ul class="list-unstyled d-flex justify-content-center mb-0">
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                            <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                          </svg>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4 mb-0">
+                    <div class="d-flex justify-content-center mb-4">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+                        class="rounded-circle shadow-1-strong" width="150" height="150" />
+                    </div>
+                    <h5 class="mb-3">John Smith</h5>
+                    <h6 class="text-primary mb-3">Marketing Specialist</h6>
+                    <p class="px-xl-3">
+                      <i class="fas fa-quote-left pe-2"></i>
+                      "I was skeptical about online learning until I enrolled 
+                      in courses on this web platform. As a hands-on learner, 
+                      I wasn't sure if I could grasp complex concepts without traditional 
+                      classroom settings. However, the platform's immersive video lessons and 
+                      practical exercises exceeded my expectations. The instructors were engaging
+                       and provided step-by-step guidance, making even the most challenging topics 
+                       understandable. The ability to interact with other learners through the platform's 
+                       community forums added an extra layer of support and motivation. I successfully 
+                       completed courses in graphic design and digital marketing, and the skills I 
+                       acquired have opened up new opportunities for me. I'm grateful for this platform 
+                       and highly recommend it to anyone seeking quality online education."
+                    </p>
+                    <ul class="list-unstyled d-flex justify-content-center mb-0">
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                          </svg>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <br/>
+        </div>
+
+    </div>
+
+{% endblock  %}

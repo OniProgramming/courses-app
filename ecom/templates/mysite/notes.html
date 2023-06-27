@@ -1,0 +1,48 @@
+{% extends 'mysite/base.html' %}
+{% block title %}Notes{% endblock %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid my-4" style= "margin-bottom: 5%">
+    <div class="container">
+        <h3 class="display-8"> Take notes while learning </h3>
+        <p class="lead">Learn programming by practicing.</p>
+        <hr class = "my-4">
+        {% if send_message %}
+            <p>Thank you for taking notes. Download your notes in pdf format</p>
+            <a class="btn btn-warning" href="{% url 'course_pdf'%}"><b> Courses PDF </b></a>
+        {% else %}
+            <form action = "{% url 'notes' %}" method = "POST">
+                {% csrf_token %}
+                <div class="form-row col-md-6">
+                    <div class="form-group ">
+                        <label for="name">Username:</label>
+                        <input type="text" class="form-control" id="uname" name="uname" placeholder="username">
+                    </div>
+                    <br/>
+                    <div class="form-group ">
+                        <label for="name">Course name:</label>
+                        <input type="text" class="form-control" id="courseName" name="courseName" placeholder="Course Name">
+                    </div>
+                    <br/>
+                    <div class="form-group ">
+                        <label for="name">Lesson Name:</label>
+                        <input type="text" class="form-control" id="lessonName" name="lessonName" placeholder="Lesson Name">
+                    </div>
+                    <br/>
+                    </div>
+                    <br/>
+                    <div class="form-row col-md-6">
+                    <div class="form-outline">
+                        <textarea class="form-control" id="notes" name = "notes" rows="8" placeholder="Take notes"></textarea>
+                    </div>
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+        {% endif %}
+    </div>
+</div>
+
+
+
+{% endblock  %}

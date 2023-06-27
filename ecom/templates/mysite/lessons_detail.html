@@ -1,0 +1,111 @@
+{% extends 'mysite/base.html' %}
+{% block title %}Lessons{% endblock %}
+{% block content %}
+<style>
+  svg {
+    margin-right: 10px;
+  }
+  
+</style>
+
+<div class="jumbotron jumbotron-fluid my-4 bg-white">
+  <div class="container">
+      <h4 class="display-8">Course: {{course_obj.title}}</h4>
+      <p></p>
+      <hr class = "my-4">
+  </div>
+</div>
+<div class= "container my-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="accordion shadow" id="accordionExample" style="margin-bottom: 20%; margin-top: 5%">
+        {% for section in sections %}
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{forloop.counter}}" aria-expanded="false" aria-controls="collapse">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+              </svg>
+              {% if section.free_count_lessons == "yes" %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+                    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+                  </svg>
+                  {{section.title}}
+                {% else %}
+                  {% if user.student.subscribed %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+                    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+                  </svg>
+                  {{section.title}}
+                  {% else %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                  </svg>
+                  {{section.title}}
+                  {% endif %}
+                {% endif %}
+            </button>
+          </h2>
+          <div id="collapse{{forloop.counter}}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                {% for lesson in lessons %}
+                    {% if lesson.section == section %}
+                        <a href="/courses/{{course_obj.id}}/{{lesson.id}}" style="text-decoration: none; color: black">{{forloop.counter}}. {{lesson.title}}</a>
+                        <br/>
+                        <hr/>
+                    {% endif %}
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      
+
+    </div>
+
+    <div class="col-md-8 my-4">
+      
+      <h4 class="display-8">{{current_lesson.title}}</h4>
+      <br/>
+      {% if course_obj.type_course == "free" %}
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe width="720" height="420" class="embed-responsive-item" frameborder="0" src="{{current_lesson.video_url}}" allowfullscreen class="shadow"></iframe>
+        </div>
+          <div class="card" style = "margin-top: 10px">
+          <div class="card-body">
+            <hr>
+            <h4 class="display-8">About the Lesson: {{current_lesson.title}}</h4>
+            <p>{{current_lesson.lesson_description}}</p>
+          </div>
+        </div>
+      {% else %}
+        {% if user.student.subscribed or current_lesson.preview == 'yes' %}
+          <div class="embed-responsive">
+            <iframe  class="responsive-iframe" width="700" height="400" frameborder="0" src="{{current_lesson.video_url}}" allowfullscreen class="shadow"></iframe>
+          </div>
+            <div class="card" style = "margin-top: 10px">
+            <div class="card-body">
+              <hr>
+              <h4 class="display-8">About the Lesson: {{current_lesson.title}}</h4>
+              <p>{{current_lesson.lesson_description}}</p>
+            </div>
+          </div>
+        {% else %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-top: 2%">
+            <strong>Become a pro in order to watch the video!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div> 
+  </div>
+</div>
+
+
+
+
+{% endblock  %}
+
+
