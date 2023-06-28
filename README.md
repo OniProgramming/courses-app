@@ -4,7 +4,7 @@
 A project where the owner of the company sell online courses and the customers can buy the pro package for a monthly fee.
 
 ## Demo
-
+[![](https://markdown-videos.vercel.app/youtube/{https://youtu.be/_J7a1wgPgLE})](https://youtu.be/{(https://youtu.be/_J7a1wgPgLE)})
 ![video]([YouTube link](https://youtu.be/_J7a1wgPgLE))
 
 ## The functionalities of the application
