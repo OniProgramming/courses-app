@@ -17,6 +17,7 @@ A project where the owner of the company sell online courses and the customers c
 | Convert form to pdf | :heavy_check_mark: |
 | Email contact | :heavy_check_mark: |
 | Newsletter | :heavy_check_mark: |
+| Video Hosting | :heavy_check_mark: |
 
 ## Documentation
 
