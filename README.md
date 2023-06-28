@@ -107,7 +107,8 @@ This person model was created because we want to notify the users when we upload
 
 | Field             | Type     |
 | ----------------- | -------- |
-| country | BigAutoField |
+| id | BigAutoField |
+| country | CharField |
 | email | CharField |
 | name | CharField |
 
@@ -118,5 +119,30 @@ Notes model is also a “Self-Referencing relationship model”. This model was 
 - notes: this field stores in a text field the notes of the user
 - user_name: this field will contain the name of the account for which the notes are taken
 
+| Field             | Type     |
+| ----------------- | -------- |
+| id | BigAutoField |
+| course_name | CharField |
+| lesson_name | CharField |
+| user_name | CharField |
+| notes | TextField |
+
 > **Note**
 > We need to show the pdf with the informations for a specific logged user. For this, normally we needed to link the Notes model with the user model. But we didn’t do that. The reason why, is because we added the user_name field in the notes model. When we generate the pdf file, we can check first if the username form the notes model is the same user within users model; this is made by filtering the information within a variable. We can do that by typing the following code: “<name_of_the_variable> = Notes.objects.filter(user_name = user_account)”. This line of code means this: our variable is of the type Notes, and it will store the name of the user. Then it will be filtered by the same username form the user account model. If the two are the same, then we can show the information for that respective user. 
+
+#### Students model
+Students model provides the extended information about the Users model, meaning it contains additional information that we need for a specific user. This model contains information about the users that are subscribed or are not subscribed to the pro package. This mean that we need to have an account with all the informations about the user, along with the authentication of the users. The student model has the following features:
+- subscribed: this field will store the boolean field yes or no for the user subscription. If the user is subscribed, hen our field will be a filled checkbox, otherwise, it will be an empty checkbox (meaning the user didn’t subscribed)
+- subID: this field will contain the subscription Id for our pro package. After paying this field will have the id of the subscription plan, otherwise it ill have by default the value null (meaning the user didn’t subscribed).
+- user: the field will contain the name of the user for which the subscription is happening or not
+
+| Field             | Type     |
+| ----------------- | -------- |
+| id | BigAutoField |
+| user | OneToOneField(id) (the id form the Users model; the pre-build django model |
+| subID | CharField |
+| subscribed | BooleanField |
+
+> **Note**
+> The user field is in a  one to one field relationship with the user model
+
