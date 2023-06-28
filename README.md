@@ -8,6 +8,16 @@ A project where the owner of the company sell online courses and the customers c
 
 ## The functionalities of the application
 
+| Functionality            | Match condition     |
+| ----------------- | -------------------- |
+| Authentication | :heavy_check_mark: |
+| Payment options | :heavy_check_mark:  |
+| Search through courses | :heavy_check_mark: |
+| Pagination | :heavy_check_mark: |
+| Convert form to pdf | :heavy_check_mark: |
+| Email contact | :heavy_check_mark: |
+| Newsletter | :heavy_check_mark: |
+
 ## Documentation
 
 The technologies used for this project are: 
