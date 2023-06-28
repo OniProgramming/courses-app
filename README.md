@@ -5,17 +5,6 @@ A project where the owner of the company sell online courses and the customers c
 
 ## Demo
 
-[![Watch the video](https://img.youtube.com/vi/_J7a1wgPgLE/maxresdefault.jpg)](https://youtu.be/_J7a1wgPgLE)
-
-[![Now in Android: 55](https://i.ytimg.com/vi/_J7a1wgPgLE/maxresdefault.jpg)] // Thumbnail
-(https://youtu.be/_J7a1wgPgLE "Now in Android: 55")    // Video Link
-
-
-<img src="https://i.ytimg.com/vi/_J7a1wgPgLE/maxresdefault.jpg" width="50%">(https://youtu.be/_J7a1wgPgLE "Now in Android: 55")
-
-
-[![Watch the video](https://img.youtube.com/vi/_J7a1wgPgLE/hqdefault.jpg)](https://www.youtube.com/embed/_J7a1wgPgLE)
-
 [<img src="https://img.youtube.com/vi/_J7a1wgPgLE/hqdefault.jpg" width="600" height="300"
 />](https://www.youtube.com/embed/_J7a1wgPgLE)
 
