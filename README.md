@@ -16,8 +16,6 @@ The technologies used for this project are:
 
 We used also Git bash for traking any changes in any set of files from our project.
 
-![Image description](images/Capture.PNG)
-
 ### Database Models
 For this project we used 6 models (without the pre-buit django modles).
 The models are:
