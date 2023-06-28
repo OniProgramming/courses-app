@@ -69,3 +69,10 @@ The Sections models contain three fields, namely:
 - course: this field is a Foreign key to the Course model; the field is linked with the “id” (primary key) form Course model; in this way we tell the model the courses between we can choose
 - free_count_lessons: this field contain the information about the type of the section, meaning, if the section has free lessons or not
 - title: this field contain the name of the section (or better said, the name of the chapter)
+
+| Field             | Type     |
+| ----------------- | -------- |
+| id | BigAutoField |
+| course | Foreignkey (id) (the id from courses model)  |
+| description | TextField |
+| is_popular | CharField |
