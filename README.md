@@ -3,6 +3,11 @@
 # Online video subscription
 A project where the owner of the company sell online courses and the customers can buy the pro package for a monthly fee.
 
+## Demo
+
+
+## The functionalities of the application
+
 ## Documentation
 
 The technologies used for this project are: 
