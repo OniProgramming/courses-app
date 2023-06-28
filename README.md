@@ -6,7 +6,7 @@ A project where the owner of the company sell online courses and the customers c
 ## Demo
 
 [![Watch the video](https://img.youtube.com/vi/_J7a1wgPgLE/maxresdefault.jpg)](https://youtu.be/_J7a1wgPgLE)
-https://youtu.be/_J7a1wgPgLE
+
 
 ## The functionalities of the application
 
