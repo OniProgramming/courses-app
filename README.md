@@ -9,6 +9,7 @@ A project where the owner of the company sell online courses and the customers c
 />](https://www.youtube.com/embed/_J7a1wgPgLE)
 [![Watch the video](https://img.youtube.com/vi/_J7a1wgPgLE/hqdefault.jpg)](https://www.youtube.com/embed/_J7a1wgPgLE)
 
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/_J7a1wgPgLE/0.jpg)](https://www.youtube.com/watch?v=_J7a1wgPgLE "Unity Snake Game")
 
 ## The functionalities of the application
 
