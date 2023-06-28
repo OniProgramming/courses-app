@@ -17,4 +17,4 @@ The technologies used for this project are:
 We used also Git bash for traking any changes in any set of files from our project.
 
 
-![Image description](Capture.PNG)
+![Image description](images/Capture.PNG)
