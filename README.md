@@ -6,7 +6,7 @@ A project where the owner of the company sell online courses and the customers c
 ## Documentation
 
 The technologies used for this project are: 
-- For the backend are:
+- For the backend:
     - Django Python framework 
     - Paypal payment gateway
 - For the fronend:
