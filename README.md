@@ -11,7 +11,7 @@ A project where the owner of the company sell online courses and the customers c
 (https://youtu.be/_J7a1wgPgLE "Now in Android: 55")    // Video Link
 
 
-[<img src="https://i.ytimg.com/vi/_J7a1wgPgLE/maxresdefault.jpg" width="50%">](https://youtu.be/_J7a1wgPgLE "Now in Android: 55")
+<img src="https://i.ytimg.com/vi/_J7a1wgPgLE/maxresdefault.jpg" width="50%">(https://youtu.be/_J7a1wgPgLE "Now in Android: 55")
 
 ## The functionalities of the application
 
