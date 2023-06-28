@@ -13,5 +13,8 @@ The technologies used for this project are:
     - HTML5
     - Bootstrap
     - CSS
+
 We used also Git bash for traking any changes in any set of files from our project.
+
+
 ![Image description](Capture.PNG)
