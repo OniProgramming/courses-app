@@ -43,7 +43,20 @@ This course model is the first step in the creation of our courses, and it provi
 - type_course: this field has two options to choose; free or pro; if the course is free then the course is open for anybody, even if they don’t have an account or not, while if the course is pro, then with the exception of the free lessons that are provided (this free lessons has the scope of attracting people to pay for the course; these lessons are meant to show the user the quality of the iformations provided in that respective course, in order that the user feel satisfied with the subscription package) then the course be available only after paying the subscription fee
 - upload_date: show the date when the course was uploaded on the platform
 
+| Field            | Type                                                               |
+| ----------------- | ------------------------------------------------------------------ |
+| id | BigAutoField |
+| course_length | CharField |
+| description | TextField |
+| is_popular | CharField |
+
 > **Note**
 > A thing that is worth mentioning is the absence of a media folder for storing images and videos. Instead, URL links are utilized to integrate media content into the application. This approach is chosen to optimize memory efficiency and ensure fast application performance. By avoiding the storage of numerous media files, the risk of increased response times and the need for additional server space is mitigated. Images can be sourced from online repositories, while courses can be stored in a cloud service and embedded using the <iframe> tag. This strategy enhances memory utilization and guarantees consistent and speedy application execution.
 The project's decision to forego a media folder and rely on URL links for integrating images and videos is driven by the objective of improving memory efficiency and maintaining a consistently fast application. By sourcing images from online repositories and storing courses in a cloud service, the project ensures optimal resource utilization while safeguarding the application's performance.
 
+#### Sections model
+Sections model is connected with courses models. After adding our course, the next step is to create a section model. This model will contain the chapters upon which the course are presented. For this we will have a field that is a Foreign key which connect the Sections model to the Course model. The reason for this is because we want to know which section belong to which course.
+The Sections models contain three fields, namely: 
+- course: this field is a Foreign key to the Course model; the field is linked with the “id” (primary key) form Course model; in this way we tell the model the courses between we can choose
+- free_count_lessons: this field contain the information about the type of the section, meaning, if the section has free lessons or not
+- title: this field contain the name of the section (or better said, the name of the chapter)
