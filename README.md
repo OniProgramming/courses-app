@@ -7,7 +7,7 @@ A project where the owner of the company sell online courses and the customers c
 
 [<img src="https://img.youtube.com/vi/_J7a1wgPgLE/hqdefault.jpg" width="600" height="300"
 />](https://www.youtube.com/embed/_J7a1wgPgLE)
-
+[![Watch the video](https://img.youtube.com/vi/_J7a1wgPgLE/hqdefault.jpg)](https://www.youtube.com/embed/_J7a1wgPgLE)
 
 
 ## The functionalities of the application
