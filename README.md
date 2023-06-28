@@ -11,6 +11,12 @@ A project where the owner of the company sell online courses and the customers c
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/_J7a1wgPgLE/0.jpg)](https://www.youtube.com/watch?v=_J7a1wgPgLE "Unity Snake Game")
 
+
+
+<video src="https://youtu.be/_J7a1wgPgLE" controls="controls" style="max-width: 730px;">
+</video>
+
+
 ## The functionalities of the application
 
 | Functionality            | Match condition     |
