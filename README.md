@@ -7,6 +7,9 @@ A project where the owner of the company sell online courses and the customers c
 [![](https://markdown-videos.vercel.app/youtube/{https://youtu.be/_J7a1wgPgLE})](https://youtu.be/{(https://youtu.be/_J7a1wgPgLE)})
 ![video]([YouTube link](https://youtu.be/_J7a1wgPgLE))
 
+
+<a href=https://youtu.be/{https://youtu.be/_J7a1wgPgLE}><img src=https://markdown-videos.vercel.app/youtube/{https://youtu.be/_J7a1wgPgLE}></a></img>
+
 ## The functionalities of the application
 
 | Functionality            | Match condition     |
