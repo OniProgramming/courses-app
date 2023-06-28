@@ -18,3 +18,5 @@ We used also Git bash for traking any changes in any set of files from our proje
 
 
 ![Image description](images/Capture.PNG)
+
+![Image description](erd.png)
