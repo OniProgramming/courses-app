@@ -74,5 +74,27 @@ The Sections models contain three fields, namely:
 | ----------------- | -------- |
 | id | BigAutoField |
 | course | Foreignkey (id) (the id from courses model)  |
-| description | TextField |
-| is_popular | CharField |
+| free_count_lessons | CharField |
+| title | CharField |
+
+
+#### Lessons model
+The Lessons model serves as a child model of both the Course model and the Section model, resulting in the inclusion of two foreign key fields. One of these fields contains a foreign key referencing the Course model, while the other field references the Section model. This design choice enables us to determine the course and section to which each lesson belongs. These two pieces of information are crucial for displaying the lessons appropriately. The structure of the model is:
+- video_url: this field contains the link of the video that is on the cloud service and embedded with the iframe tag in the HTML code. - - title: the field stores the name of the lesson
+- preview: this field has two options, yes or no. If it is yes then the course will be show regardless if the course is pro (of course this means that the free_count_lessons field from the section model must be set to “yes” too). If it is no, then the lesson will not be available for pro courses (of course in this case the free_count_lessons field from the section model is set to “no”)
+- lesson_description: this field contain relatable information about the lesson
+- section: this field contain the foreign key to the primary key “id” of the Sections model, it inherits the names of the sections from which we can choose, and the lesson will belong to that particularly section 
+- course: the field contain the foreign key to the primary key “id” of the courses model, it inherits the names of the courses that we have created. 
+
+| Field             | Type     |
+| ----------------- | -------- |
+| id | BigAutoField |
+| course | Foreignkey (id) (the id from courses model) |
+| section | Foreignkey (id) (the id from sections model) |
+| lesson_description | TextField |
+| preview | CharField |
+| title | CharField |
+| video_url | CharField |
+
+> **Note**
+> To create a comprehensive course video, a specific workflow is followed. Firstly, the necessary information is filled in the Course model. Subsequently, the information is populated in the Section model. Lastly, the information pertaining to the lessons is filled in the Lessons model. This sequential approach ensures that before creating a lesson, we have the prerequisite knowledge of the associated course and section/chapter to which it pertains.
