@@ -44,9 +44,9 @@ This course model is the first step in the creation of our courses, and it provi
 - upload_date: show the date when the course was uploaded on the platform
 
 
-| Course model |
+| Course model                 |
 |------------------------------|
-| Field            | Type      |
+| Field             | Type     |
 | ----------------- | -------- |
 | id | BigAutoField |
 | course_length | CharField |
