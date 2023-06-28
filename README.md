@@ -4,23 +4,9 @@
 A project where the owner of the company sell online courses and the customers can buy the pro package for a monthly fee.
 
 ## Demo
-[![](https://markdown-videos.vercel.app/youtube/{https://youtu.be/_J7a1wgPgLE})](https://youtu.be/{(https://youtu.be/_J7a1wgPgLE)})
-![video]([YouTube link](https://youtu.be/_J7a1wgPgLE))
 
-
-<a href=https://youtu.be/{https://youtu.be/_J7a1wgPgLE}><img src=https://markdown-videos.vercel.app/youtube/{https://youtu.be/_J7a1wgPgLE}></a></img>
-
-
-<center>
- <iframe width="560" 
-         height="315" 
-         src="https://youtu.be/_J7a1wgPgLE" 
-         title="YouTube video player" 
-         frameborder="0" 
-         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-         allowfullscreen>
- </iframe>
-</center>
+[![Watch the video](https://img.youtube.com/vi/_J7a1wgPgLE/maxresdefault.jpg)](https://youtu.be/_J7a1wgPgLE)
+https://youtu.be/_J7a1wgPgLE
 
 ## The functionalities of the application
 
