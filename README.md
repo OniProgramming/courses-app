@@ -43,8 +43,11 @@ This course model is the first step in the creation of our courses, and it provi
 - type_course: this field has two options to choose; free or pro; if the course is free then the course is open for anybody, even if they don’t have an account or not, while if the course is pro, then with the exception of the free lessons that are provided (this free lessons has the scope of attracting people to pay for the course; these lessons are meant to show the user the quality of the iformations provided in that respective course, in order that the user feel satisfied with the subscription package) then the course be available only after paying the subscription fee
 - upload_date: show the date when the course was uploaded on the platform
 
-| Field            | Type                                                               |
-| ----------------- | ------------------------------------------------------------------ |
+
+| Course model |
+|------------------------------|
+| Field            | Type      |
+| ----------------- | -------- |
 | id | BigAutoField |
 | course_length | CharField |
 | description | TextField |
