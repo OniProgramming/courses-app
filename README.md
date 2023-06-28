@@ -7,6 +7,8 @@ A project where the owner of the company sell online courses and the customers c
 
 [![Watch the video](https://img.youtube.com/vi/_J7a1wgPgLE/maxresdefault.jpg)](https://youtu.be/_J7a1wgPgLE)
 
+[![Now in Android: 55](https://i.ytimg.com/vi/_J7a1wgPgLE/maxresdefault.jpg)] // Thumbnail
+(https://youtu.be/_J7a1wgPgLE "Now in Android: 55")    // Video Link
 
 ## The functionalities of the application
 
