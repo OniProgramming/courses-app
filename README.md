@@ -96,3 +96,27 @@ The Lessons model serves as a child model of both the Course model and the Secti
 
 > **Note**
 > To create a comprehensive course video, a specific workflow is followed. Firstly, the necessary information is filled in the Course model. Subsequently, the information is populated in the Section model. Lastly, the information pertaining to the lessons is filled in the Lessons model. This sequential approach ensures that before creating a lesson, we have the prerequisite knowledge of the associated course and section/chapter to which it pertains.
+
+#### Persons model
+The person model is made for storing newsletter subscription. This model is of the type “Self-Referencing relationship” as it is just a single table with no relationships with other tables. The person model has three fields: 
+- country: the field stores the information about the country form where the user is
+- email: the field stores the information about the email of the user
+- name: it contains the name of the user with which he wants to subscribe for the newsletter
+
+This person model was created because we want to notify the users when we uploaded a new course on our platform, and they can check and watch the course. 
+
+| Field             | Type     |
+| ----------------- | -------- |
+| country | BigAutoField |
+| email | CharField |
+| name | CharField |
+
+#### Notes model
+Notes model is also a “Self-Referencing relationship model”. This model was created as an attempt to provide to the pro users an environment where they can take notes from the course while learning and playing the lesson. After they took the notes the application will generate a pdf with the information from the notes model, and it will be downloaded automatically after the user type the link button for the pdf. Notes model has the following features:
+- course_name: this field contains the name of the course for which the user will take the notes 
+- lesson_name: this field contains the name of the lesson for which the user will take the notes
+- notes: this field stores in a text field the notes of the user
+- user_name: this field will contain the name of the account for which the notes are taken
+
+> **Note**
+> We need to show the pdf with the informations for a specific logged user. For this, normally we needed to link the Notes model with the user model. But we didn’t do that. The reason why, is because we added the user_name field in the notes model. When we generate the pdf file, we can check first if the username form the notes model is the same user within users model; this is made by filtering the information within a variable. We can do that by typing the following code: “<name_of_the_variable> = Notes.objects.filter(user_name = user_account)”. This line of code means this: our variable is of the type Notes, and it will store the name of the user. Then it will be filtered by the same username form the user account model. If the two are the same, then we can show the information for that respective user. 
