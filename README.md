@@ -5,17 +5,10 @@ A project where the owner of the company sell online courses and the customers c
 
 ## Demo
 
-<a href = "https://youtu.be/_J7a1wgPgLE" >
-    <img src="https://files.realpython.com/media/Get-Started-With-Django_Watermarked.15a1e05597bc.jpg">
+<a href = "https://screenrec.com/share/wnrL6RU58F" >
+    <img src="images\Capture1.PNG">
 </a>
-
-
-
-
-[<img src="https://img.youtube.com/vi/_J7a1wgPgLE/hqdefault.jpg" width="600" height="300"
-/>](https://www.youtube.com/embed/_J7a1wgPgLE)
-
-(the preview doesn't work; but the link is functional)
+(click for demo)
 
 
 ## The functionalities of the application
