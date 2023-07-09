@@ -35,6 +35,8 @@ The technologies used for this project are:
     - Bootstrap
     - CSS
 
+<img src="images\Capture.PNG">
+
 We used also Git bash for traking any changes in any set of files from our project.
 
 ### Database Models
