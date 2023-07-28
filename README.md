@@ -5,10 +5,10 @@ A project where the owner of the company sell online courses and the customers c
 
 ## Demo
 
-<a href = "https://screenrec.com/share/A13p2fZsMc">
+<a href = "https://youtu.be/li7TGhPFK7c">
     <img src="images\Capture1.PNG">
 </a>
-(click for demo)
+(click on the image for demo)
 
 
 ## The functionalities of the application
